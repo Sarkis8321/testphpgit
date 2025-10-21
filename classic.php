@@ -5,13 +5,15 @@ class User
     public $surname;
     public $birth;
     public $passport;
+    public $blood;
 
-    function __construct($name, $surname, $birth, $passport)
+    function __construct($name, $surname, $birth, $passport, $blood)
     {
         $this->name = $name;
         $this->surname = $surname;
         $this->birth = $birth;
         $this->passport = $passport;
+        $this->blood = $blood;
     }
 
     public function editName($txt){
@@ -26,12 +28,16 @@ class User
     public function editPassport($txt){
         $this->passport = $txt;
     }
+    public function editBlood($txt){
+        $this->blood = $txt;
+    }
     public function userInfo(){
         $nameText = '<div class="prop">Имя: '.$this->name.'</div>';
         $surnameText = '<div class="prop">Фамилия: '.$this->surname.'</div>';
         $birthText = '<div class="prop">День рождения: '.$this->birth.'</div>';
         $passportText = '<div class="prop">Паспорт: '.$this->passport.'</div>';
-        return '<div class="props">'.$nameText.$surnameText.$birthText.$passportText.'</div>';
+        $bloodText = '<div class="prop">Группа крови: '.$this->blood.'</div>';
+        return '<div class="props">'.$nameText.$surnameText.$birthText.$passportText.$bloodText.'</div>';
     }
 }
 class SimpleClass
@@ -58,14 +64,14 @@ class SimpleClass
 
 $sc = new SimpleClass();
 
-$u = new User('Sem','Semov', '01.10.2006', '1111 222222');
+$u = new User('Sem','Semov', '01.10.2006', '1111 222222','A+');
 
 // $u->editName('Sem');
 // $u->editSurname('Semov');
 // $u->editBitrth('01.10.2006');
 // $u->editPassport('1111 222222');
 
-$u1 = new User('Nar','Assa', '20.10.2006', '2222 111111');
+$u1 = new User('Nar','Assa', '20.10.2006', '2222 111111','AB-');
 
 // $u1->editName('Nar');
 // $u1->editSurname('Assa');
