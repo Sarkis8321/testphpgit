@@ -33,16 +33,19 @@ class User
         $passportText = '<div class="prop">Паспорт: '.$this->passport.'</div>';
         return '<div class="props">'.$nameText.$surnameText.$birthText.$passportText.'</div>';
     }
-
 }
 class SimpleClass
 {
     public array $users = [];
 
+
     public function addUser($user){
         array_push($this->users, $user);
     }
 
+    public function getUsersSize(){
+        return count($this->users);
+    }
 
     public function displayAllUsers(){
         foreach($this->users as $key=>$value){
@@ -73,6 +76,8 @@ $sc->addUser($u);
 $sc->addUser($u1);
 
 $sc->displayAllUsers();
+
+echo $sc->getUsersSize();
 
 // вызывете фукцию addUser($user) для добавления. 
 // в классе SimpleClass создаете функции для поиска ученика по имени, фамилии. 
